@@ -1,0 +1,6 @@
+Ejecutar primera vez flask
+____________________________
+pip install flask
+$env:FLASK_APP = "main.py"
+$env:FLASK_ENV = "development"
+python -m flask run
