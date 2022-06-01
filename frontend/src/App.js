@@ -153,7 +153,9 @@ function App() {
   }*/
   return (
     <>
-    
+      <head>
+        <link rel="stylesheet" href="style.css"/>
+      </head>
       <h1> Beat Me </h1>
       < TodoList todos = {todos} toogleTodo= {toggleTodo}/>
       <form name="f1">
