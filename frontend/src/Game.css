@@ -1,0 +1,85 @@
+* {
+    background-color: red;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: none;
+}
+
+nav {
+    background: black;
+    height: 80px;
+    width: 100%;
+}
+
+label.logo{
+    color: white;
+    background-color: black;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+    background-color: black;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+    background-color: black;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: black;
+}
+
+li.active{
+    background-color: red;
+}
+
+a.active{
+    background-color: red;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    top: 0%;
+    left: 80%;
+
+}
+
+.btn2 {
+    border-radius: 50%;
+    padding: 15px 50px;
+    top: 30%;
+}
+
+.btn3 {
+    left: 90%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
