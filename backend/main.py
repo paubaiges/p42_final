@@ -16,7 +16,6 @@ def save_json(dictionary, name_file):
     with open(name_file, 'w') as fp:
         json.dump(dictionary, fp, sort_keys=True, indent=4)
 
-
 def load_json(name_file):
     data = None
     with open(name_file, 'r') as fp:
@@ -32,7 +31,7 @@ def sign_up(name):
         save_json(users, "users.json")
     return f"Done"
 
-@app.route("/addscore/<name>/<score>")
+@app.route("/addscore/<name>/<pista>/<score>")
 def addscore(name, score):
     users = load_json("users.json")
     users[name] = {"score":score}
