@@ -59,10 +59,6 @@ function Home() {
     catch(error){
       console.log(error)
     }
-    var doc = document.location.href
-    console.log(doc)
-
-    window.open("https://localhost/game");
     //todoNameRef.current.value = null 
   }
   //añadirUsuarios("Lola")
