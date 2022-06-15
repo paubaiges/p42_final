@@ -1,7 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'
-import TodoList from './TodoList';
 import axios from 'axios';
 
 
@@ -157,7 +156,6 @@ function Home() {
         <link rel="stylesheet" href="style.css"/>
       </head>
       <h1> Beat Me </h1>
-      < TodoList todos = {todos} toogleTodo= {toggleTodo}/>
       <form name="f1">
         <audio controls>
           <source src="audio1.mp3" type="audio/mp3"/>
@@ -184,9 +182,7 @@ function Home() {
       <button onClick={añadirUsuarios}> Sign Up </button>
       <button onClick={playPista}> Play </button>
       <button onClick={goToRanking}> Ranking </button>
-      <div>{todos.filter(todo => !todo.complete).length}</div>
       <Popup trigger={<button> Trigger</button>} position="right center">
-        < TodoList todos = {todos} toogleTodo= {toggleTodo}/>
       </Popup>
     </>
   )
