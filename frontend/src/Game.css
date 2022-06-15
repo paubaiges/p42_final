@@ -51,7 +51,7 @@ a.active{
     background-color: red;
 }
 
-.btn {
+.button {
     background-color: black;
     color: white;
     padding: 15px 32px;
@@ -61,18 +61,15 @@ a.active{
     font-size: 16px;
     position: absolute;
     top: 0%;
-    left: 80%;
-
-}
-
-.btn2 {
+    left: 60%;
     border-radius: 50%;
     padding: 15px 50px;
     top: 30%;
+
 }
 
 .btn3 {
-    left: 90%;
+    left: 75%;
 }
 
 h1 {
