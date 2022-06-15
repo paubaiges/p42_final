@@ -8,6 +8,7 @@ const LOCAL_STORAGE_KEY = 'todoApps.todos'
 
 function Home() {
   const [todos, setTodos] = useState([{id: Math.floor(Math.random() * 100), name: 'Todo 1', complete: true}])
+  let otro
   let valores = [{id:1, valor:14, pista: "PISTA 1"},{id:2, valor:23, pista: "PISTA 2"}]
   obtenerLocalStorage()
   const pistas = [{Pista: 1, select: false}, {Pista: 2, select:false}, {Pista: 3, select:false}]
@@ -58,6 +59,7 @@ function Home() {
     catch(error){
       console.log(error)
     }
+    
     //todoNameRef.current.value = null 
   }
   //añadirUsuarios("Lola")
@@ -133,6 +135,14 @@ function Home() {
   function obtenerLocalStorage(){
     valores = JSON.parse(localStorage.getItem("fichero"))
   }
+
+  function comprobar(checkbox){
+    otro = checkbox.parentNode.querySelector("[type=checkbox]:not(#" + checkbox.id + ")");
+ 
+    if (otro.checked){
+        otro.checked = false;
+    }
+}
 /*
   async function hacerPeticion() {
     // Realiza la petición
@@ -161,17 +171,17 @@ function Home() {
           <source src="audio1.mp3" type="audio/mp3"/>
           Tu navegador no soporta audio HTML5.
         </audio>  
-        <input type="checkbox" id="check1" name="check1" /*onchange={verifica_seleccion(this)}*/ value="Check1" class="valores"/>Check1
+        <input type="checkbox" id="check1" name="check1" onchange = "comprobar(this)" value="Check1" class="valores"/>Check1
         <audio controls>
           <source src="audio1.mp3" type="audio/mp3"/>
           Tu navegador no soporta audio HTML5.
         </audio>
-        <input type="checkbox" id="check2" name="check2" /*onchange={verifica_seleccion(this)}*/ value="Check2" class="valores"/>Check2
+        <input type="checkbox" id="check2" name="check2" onchange = "comprobar(this)" value="Check2" class="valores"/>Check2
         <audio controls>
           <source src="audio1.mp3" type="audio/mp3"/>
           Tu navegador no soporta audio HTML5.
         </audio>
-        <input type="checkbox" id="check3" name="check3" /*onchange={verifica_seleccion(this)}*/ value="Check3" class="valores"/>Check3
+        <input type="checkbox" id="check3" name="check3" onchange = "comprobar(this)" value="Check3" class="valores"/>Check3
         <input type="submit" value="Enviar"/>
       </form>
       <video controls>
