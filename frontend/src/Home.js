@@ -54,12 +54,15 @@ function Home() {
     try{
       
       axios.get("http://127.0.0.1:5000/play_pista/" + name + "/" + pista )
-  
+      window.location.href = '/game' + "?name=" + name + "?pista=" + pista;
     }
     catch(error){
       console.log(error)
     }
-    
+    var doc = document.location.href
+    console.log(doc)
+
+    window.open("https://localhost/game");
     //todoNameRef.current.value = null 
   }
   //añadirUsuarios("Lola")
