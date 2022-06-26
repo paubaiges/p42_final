@@ -52,9 +52,8 @@ function Home() {
       });
     console.log(e.value)
     try{
-      
       axios.get("http://127.0.0.1:5000/play_pista/" + name + "/" + pista )
-      window.location.href = '/game' + "?name=" + name + "?pista=" + pista;
+      window.location.href = '/game/'+ name + "/" + pista;
     }
     catch(error){
       console.log(error)
