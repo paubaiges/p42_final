@@ -1,14 +1,28 @@
 import React, { Component, useEffect, useRef, useState } from "react";
 import './App.css';
 import { ReactMediaRecorder } from "react-media-recorder";
-import img1 from './png/3.1.png';
-import { ReactDOM } from "react";
+import { ReactDOM, useSearchParams } from "react";
 import { getAudioStream, exportBuffer } from './audio';
 import RecorderJS from 'recorder-js';
+import {useParams} from 'react-router-dom';
+import axios from "axios";
+//import '../../backend/mark.py'
+
+
+
+const ImageDetail = () => {
+  let {name} = useParams();
+  let {id} = useParams();
+  let img_path = "/images/"+id+".png"
+  return <div>
+        <img src={img_path}></img>
+        <h2> Hi {name[0].toUpperCase()+name.substring(1)} press the button below to start the test</h2>
+  </div>
+}
 
 
 class Game extends React.Component{
-
+    
     constructor(){
       super();
       this.state = {
@@ -19,7 +33,7 @@ class Game extends React.Component{
         recording: false,
         recorder: null,
         fb: "ho estàs fent molt bé!",
-        first: true
+        first: true,
       };
       this.startRecord = this.startRecord.bind(this);
       this.stopRecord = this.stopRecord.bind(this);
@@ -93,9 +107,20 @@ class Game extends React.Component{
     var recordingslist = document.getElementById('recordingslist');
     recordingslist.textContent = '';
     recordingslist.appendChild(li);
+     // send to server 
+     var song_id_blob = new Blob([2], {
+      type: 'text/plain'
+    });
 
-    // send to server 
 
+    let data = new FormData();
+    data.append('wavfile', audio, audio.name);
+    data.append('id',song_id_blob,'id')
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' }
+    }
+    axios.post('http://127.0.0.1:5000/upload', data, config)
 
     // show feedback 
 
@@ -125,7 +150,7 @@ class Game extends React.Component{
 
   render () {
     const { recording, stream } = this.state;
-
+    
     // Don't show record button if their browser doesn't support it.
     if (!stream) {
       return null;
@@ -135,7 +160,7 @@ class Game extends React.Component{
       <div>
 
         <h1>Beat Me!</h1>
-        <img src={img1}></img>
+        <ImageDetail></ImageDetail>
         <br></br>
         <button
           onClick={() => {

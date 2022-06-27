@@ -9,12 +9,13 @@ import {
   Link,
 } from "react-router-dom";
 
+
 function App() {
   return (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="game/*" element={<Game />} />
+      <Route path="game/:name/:id" element={<Game />} />
     </Routes>
   </BrowserRouter>
   );
