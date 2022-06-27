@@ -5,6 +5,7 @@ import { ReactDOM, useSearchParams } from "react";
 import { getAudioStream, exportBuffer } from './audio';
 import RecorderJS from 'recorder-js';
 import {useParams} from 'react-router-dom';
+import axios from "axios";
 //import '../../backend/mark.py'
 
 
@@ -106,9 +107,20 @@ class Game extends React.Component{
     var recordingslist = document.getElementById('recordingslist');
     recordingslist.textContent = '';
     recordingslist.appendChild(li);
+     // send to server 
+     var song_id_blob = new Blob([2], {
+      type: 'text/plain'
+    });
 
-    // send to server 
 
+    let data = new FormData();
+    data.append('wavfile', audio, audio.name);
+    data.append('id',song_id_blob,'id')
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' }
+    }
+    axios.post('http://127.0.0.1:5000/upload', data, config)
 
     // show feedback 
 
