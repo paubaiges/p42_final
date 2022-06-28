@@ -111,7 +111,11 @@ def upload():
         #score = analyse_exercise()
         # a partir de aqui analizamos el audio y damos feedback
         # TODO TENEIS QUE CARGAR EL ID REAL en vez de 1
-        a = compareAudio('./new_audio3.wav', 1)
+        f = open ('i.txt','r')
+        mensaje = f.read()
+        print(mensaje)
+        f.close()
+        a = compareAudio('./new_audio3.wav', mensaje)
         # TODO rankings
         # rankings = load_json("rankings.json")
         # rankings[name] = {"score":a}

@@ -130,6 +130,8 @@ class Game extends React.Component{
       const resp = await axios.post('http://127.0.0.1:5000/upload', data, config)
       
       console.log(resp.data);
+      this.state.score = resp.data
+
     } catch (error) {
       console.log("estamos en el error");
       console.error(error);
@@ -138,7 +140,19 @@ class Game extends React.Component{
 
     // show feedback 
 
-
+    if (this.state.score > 7.5) {
+        this.state.fb = "Muy bien lo estas haciendo genial";
+    }
+    if (this.state.score  > 5 && this.state.score <= 7.5){
+      this.state.fb = "Esta bien, estas mejorando "; 
+    }
+    if (this.state.score  >= 2.5 && this.state.score <= 5){
+      this.state.fb = "Esta bien, pero aun te queda aprender mucho pequeño aprendiz"; 
+    }
+    if (this.state.score <= 2.5){
+      this.state.fb = "Intenta otra vez"; 
+    }
+   
     // finish
     this.setState({
       recording: false
