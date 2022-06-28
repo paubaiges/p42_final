@@ -161,37 +161,100 @@ function Home() {
   return (
     <>
       <head>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="index.css"/>
       </head>
-      <h1> Beat Me </h1>
+    
+
       <form name="f1">
-        <audio controls>
-          <source src="audio1.mp3" type="audio/mp3"/>
-          Tu navegador no soporta audio HTML5.
-        </audio>  
-        <input type="checkbox" id="check1" name="check1" onchange = "comprobar(this)" value="Check1" class="valores"/>Check1
-        <audio controls>
-          <source src="audio1.mp3" type="audio/mp3"/>
-          Tu navegador no soporta audio HTML5.
-        </audio>
-        <input type="checkbox" id="check2" name="check2" onchange = "comprobar(this)" value="Check2" class="valores"/>Check2
-        <audio controls>
-          <source src="audio1.mp3" type="audio/mp3"/>
-          Tu navegador no soporta audio HTML5.
-        </audio>
-        <input type="checkbox" id="check3" name="check3" onchange = "comprobar(this)" value="Check3" class="valores"/>Check3
-        <input type="submit" value="Enviar"/>
+        <div class="style">
+          <h1> BEAT ME </h1>
+        </div>
+        
+        <h2> Select the rhythm that you will perform: </h2>
+        
+        
+
+          <h2> Track 1</h2>
+
+        <div class= 'check1'>
+          <input type="checkbox" id="check1" name="check1" value="1" class="valores"/>
+        </div>
+
+          <h2> Track 2</h2>
+        <div class= 'check2'>
+          <input type="checkbox" id="check2" name="check2" value="2" class="valores"/>
+        </div>
+
+        <h2> Track 3</h2>
+
+        <div class= 'check3'>
+        <input type="checkbox" id="check3" name="check3" value="3" class="valores"/>
+        </div>
+        <h2> Track 4</h2>
+
+        <div class= 'check4'>
+        <input type="checkbox" id="check4" name="check4" value="4" class="valores"/>
+        </div>
+        <h2> Track 5</h2>
+
+        <div class= 'check5'>
+        <input type="checkbox" id="check5" name="check5" value="5" class="valores"/>
+        </div>
+        <h2> Track 6</h2>
+
+        <div class= 'check6'>
+        <input type="checkbox" id="check6" name="check6" value="6" class="valores"/>
+        </div>
+        <h2> Track 7</h2>
+
+        <div class= 'check7'>
+        <input type="checkbox" id="check7" name="check7" value="7" class="valores"/>
+        </div>
+        <h2> Track 8</h2>
+
+        <div class= 'check8'>
+        <input type="checkbox" id="check8" name="check8" value="8" class="valores"/>
+        </div>
+        <h2> Track 9</h2>
+
+        <div class= 'check9'>
+        <input type="checkbox" id="check9" name="check9" value="9" class="valores"/>
+        </div>    
+        <h2> Track 10</h2>
+
+        <div class= 'check10'>
+        <input type="checkbox" id="check10" name="check10" value="10" class="valores"/>
+        </div>  
+        <h2> Track 11</h2>
+
+        <div class= 'check11'>
+        <input type="checkbox" id="check11" name="check11" value="11" class="valores"/>
+        </div>  
+        <h2> Track 12</h2>
+
+        <div class= 'check12'>
+        <input type="checkbox" id="check12" name="check12" value="12" class="valores"/>
+        </div>
+        <h2> Track 13</h2>
+
+        <div class= 'check13'>
+        <input type="checkbox" id="check13" name="check13" value="13" class="valores"/>
+        </div>
+        <h2> Track 14</h2>
+
+        <div class= 'check14'>
+        <input type="checkbox" id="check14" name="check14" value="14" class="valores"/>
+        </div>
+  
+
       </form>
-      <video controls>
-        <source src="hola.mp4" type="video/mp4" />
-        Su navegador no reproduce el video
-      </video>
-      <input ref={todoNameRef} type="text" />
-      <button onClick={añadirUsuarios}> Sign Up </button>
-      <button onClick={playPista}> Play </button>
-      <button onClick={goToRanking}> Ranking </button>
-      <Popup trigger={<button> Trigger</button>} position="right center">
-      </Popup>
+      <div class='user'>
+        <input ref={todoNameRef} type="text" />
+      </div>
+      <div class='play'>
+        <button onClick={playPista}> Play </button>
+      </div>
+
     </>
   )
 
