@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 from platformdirs import user_runtime_path
 from flask import jsonify
 import json
-from mark import compareAudio
+from detectionbeat import compareAudio
 
 app = Flask(__name__,template_folder='src')
 
@@ -94,14 +94,7 @@ def play_pista(name, pista):
 def list_users():
     return jsonify(load_json("users.json"))
 
-@app.route("/compareAudio/<audio>/<pista>/")
-def analyse_exercise(file_path,id_song,name):
-    a = compareAudio(file_path,id_song)
-    rankings = load_json("rankings.json")
-    rankings[name] = {"score":a}
-    save_json(rankings, "rankings.json")
-    print('Score: a')
-    return jsonify(a)
+
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -116,6 +109,14 @@ def upload():
         #print(4)
         print(i)
         #score = analyse_exercise()
-    return f"Done"
+        # a partir de aqui analizamos el audio y damos feedback
+        # TODO TENEIS QUE CARGAR EL ID REAL en vez de 1
+        a = compareAudio('./new_audio3.wav', 1)
+        # TODO rankings
+        # rankings = load_json("rankings.json")
+        # rankings[name] = {"score":a}
+        # save_json(rankings, "rankings.json")
+        print(f'Score: {a}')
+    return jsonify(a), 200
     
         

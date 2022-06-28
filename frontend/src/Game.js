@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useRef, useState } from "react";
-import './App.css';
+import './index.css';
 import { ReactMediaRecorder } from "react-media-recorder";
 import { ReactDOM, useSearchParams } from "react";
 import { getAudioStream, exportBuffer } from './audio';
@@ -7,6 +7,9 @@ import RecorderJS from 'recorder-js';
 import {useParams} from 'react-router-dom';
 import axios from "axios";
 //import '../../backend/mark.py'
+import metronomo_audio from './metronome2.wav'
+
+var index_exercise = "0"
 
 
 
@@ -14,8 +17,10 @@ const ImageDetail = () => {
   let {name} = useParams();
   let {id} = useParams();
   let img_path = "/images/"+id+".png"
+  index_exercise = id;
   return <div>
         <img src={img_path}></img>
+        <h2 hidden id="index_exercise"> {id} </h2>
         <h2> Hi {name[0].toUpperCase()+name.substring(1)} press the button below to start the test</h2>
   </div>
 }
@@ -74,13 +79,12 @@ class Game extends React.Component{
   }
 
   async play_metronome(){
-    var audio = new Audio('metronome.wav');
+    console.log("esta dentro de play metronome");
+    var audio = new Audio(metronomo_audio);
     audio.play();
-
-
   }
 
-  async stopRecord() {
+  async stopRecord(id) {
     const { recorder } = this.state;
 
     const { buffer } = await recorder.stop()
@@ -108,7 +112,9 @@ class Game extends React.Component{
     recordingslist.textContent = '';
     recordingslist.appendChild(li);
      // send to server 
-     var song_id_blob = new Blob([2], {
+     
+     //const id_exercise = document.getElementById("id_exercise");
+     var song_id_blob = new Blob([index_exercise], {
       type: 'text/plain'
     });
 
@@ -120,7 +126,15 @@ class Game extends React.Component{
     const config = {
       headers: { 'content-type': 'multipart/form-data' }
     }
-    axios.post('http://127.0.0.1:5000/upload', data, config)
+    try {
+      const resp = await axios.post('http://127.0.0.1:5000/upload', data, config)
+      
+      console.log(resp.data);
+    } catch (error) {
+      console.log("estamos en el error");
+      console.error(error);
+    }
+    
 
     // show feedback 
 
@@ -159,8 +173,12 @@ class Game extends React.Component{
     return(
       <div>
 
-        <h1>Beat Me!</h1>
+        <div class="style">
+          <h1> BEAT ME </h1>
+        </div>
+
         <ImageDetail></ImageDetail>
+      
         <br></br>
         <button
           onClick={() => {
