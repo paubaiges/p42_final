@@ -187,20 +187,20 @@ class Game extends React.Component{
     return(
       <div>
 
-        <div class="style">
+        
           <h1> BEAT ME </h1>
-        </div>
+       
 
         <ImageDetail></ImageDetail>
       
         <br></br>
-        <button
+        <button class="start"
           onClick={() => {
              this.do_exercise();
           }}
           hidden={recording? true: false}
         >
-            Do exercise!
+            Start exercice
         </button>
         <div id="recordingslist"></div>
         <div hidden={this.state.recording && !this.state.first? true: false}>

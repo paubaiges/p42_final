@@ -46,7 +46,7 @@ def compareAudio(file_path,arr):
     onset_frames = librosa.onset.onset_detect(x, sr=sr, wait=1, pre_avg=1, post_avg=1, pre_max=1, post_max=1)#Detect the Onsets
     onset_times = librosa.frames_to_time(onset_frames)
     print(0, np.array(scores_arrs[str(arr)]), onset_times )
-    F, P, R = mir_eval.onset.f_measure(np.array(scores_arrs[str(arr)]), onset_times , window=0.35)
+    F, P, R = mir_eval.onset.f_measure(np.array(scores_arrs[str(arr)]), onset_times , window=0.45)
     print(1)
     score = P*10
     print(onset_frames)

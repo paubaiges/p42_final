@@ -171,7 +171,12 @@ function Home() {
         </div>
         
         <h2> Select the rhythm that you will perform: </h2>
-        
+        <div class='video1'>
+          <video width="500" height="300" controls>
+            <source src="hola.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
+        </div>
         
 
           <h2> Track 1</h2>
@@ -249,7 +254,7 @@ function Home() {
 
       </form>
       <div class='user'>
-        <input ref={todoNameRef} type="text" />
+        <input ref={todoNameRef} type="text" size="50" />
       </div>
       <div class='play'>
         <button onClick={playPista}> Play </button>

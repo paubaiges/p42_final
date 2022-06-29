@@ -50,55 +50,82 @@ h3{
   left:15px;
 }
 .user{
-  
   position:absolute;
-  margin-top: 100px;
+  top: 550px;
   right: 200px;
 }
-.video1{
-  position: right; 
-  margin-top: -190px;
-  
-}
-.audio1{
+.play{
   position:absolute;
-  left:30px;
-  top:270px;
+  top: 550px;
+  right: 150px;
+}
+.video1{
+  position: absolute; 
+  top: 200px;
+  right: 100px;
+  
 }
 .check1{
   position:absolute;
   left:370px;
-  top:285px;
-}
-.audio2{
-  position:absolute;
-  left:30px;
-  top:350px;
+  top:310px;
 }
 .check2{
   position:absolute;
   left:370px;
-  top:365px;
-}
-.audio3{
-  position:absolute;
-  left:30px;
-  top:430px;
+  top:425px;
 }
 .check3{
   position:absolute;
   left:370px;
-  top:445px;
-}
-.audio4{
-  position:absolute;
-  left:30px;
-  top:510px;
+  top:540px;
 }
 .check4{
   position:absolute;
   left:370px;
-  top:535px;
+  top:655px;
+}
+.check5{
+  position:absolute;
+  left:370px;
+  top:770px;
+}.check6{
+  position:absolute;
+  left:370px;
+  top:895px;
+}.check7{
+  position:absolute;
+  left:370px;
+  top:1010px;
+}.check8{
+  position:absolute;
+  left:370px;
+  top:1125px;
+}.check9{
+  position:absolute;
+  left:370px;
+  top:1240px;
+}
+.check10{
+  position:absolute;
+  left:370px;
+  top:1360px;
+}.check11{
+  position:absolute;
+  left:370px;
+  top:1480px;
+}.check12{
+  position:absolute;
+  left:370px;
+  top:1595px;
+}.check13{
+  position:absolute;
+  left:370px;
+  top:1710px;
+}.check14{
+  position:absolute;
+  left:370px;
+  top:1825px;
 }
 .popup1{
   position: absolute;
