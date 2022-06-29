@@ -37,7 +37,7 @@ class Game extends React.Component{
         stream: null,
         recording: false,
         recorder: null,
-        fb: "ho estàs fent molt bé!",
+        fb: "Lets go!",
         first: true,
       };
       this.startRecord = this.startRecord.bind(this);
@@ -133,7 +133,7 @@ class Game extends React.Component{
       this.state.score = resp.data
 
     } catch (error) {
-      console.log("estamos en el error");
+      console.log("error");
       console.error(error);
     }
     
@@ -141,16 +141,16 @@ class Game extends React.Component{
     // show feedback 
 
     if (this.state.score > 7.5) {
-        this.state.fb = "Muy bien lo estas haciendo genial";
+        this.state.fb = "That is amazing!";
     }
     if (this.state.score  > 5 && this.state.score <= 7.5){
-      this.state.fb = "Esta bien, estas mejorando "; 
+      this.state.fb = "It's ok, but you can do better"; 
     }
     if (this.state.score  >= 2.5 && this.state.score <= 5){
-      this.state.fb = "Esta bien, pero aun te queda aprender mucho pequeño aprendiz"; 
+      this.state.fb = "You still have a lot to learn little apprentice"; 
     }
     if (this.state.score <= 2.5){
-      this.state.fb = "Intenta otra vez"; 
+      this.state.fb = "Try again"; 
     }
    
     // finish
@@ -208,7 +208,7 @@ class Game extends React.Component{
             Score: {this.state.score}
           </h2>
           <h2>
-            Feedback: {this.state.fb}
+            {this.state.fb}
           </h2>
         </div>
       </div>
