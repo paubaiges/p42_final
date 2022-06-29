@@ -173,7 +173,7 @@ function Home() {
         <h2> Select the rhythm that you will perform: </h2>
         <div class='video1'>
           <video width="500" height="300" controls>
-            <source src="hola.mp4" type="video/mp4"/>
+            <source src="video_home.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
           </video>
         </div>
